@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 export default function Tab() {
   return (
     <View style={styles.container}>
-      <Text>About</Text>
+      <ThemedText>About</ThemedText>
     </View>
   );
 }

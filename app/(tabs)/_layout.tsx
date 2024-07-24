@@ -1,3 +1,4 @@
+import { ThemedIcon } from "@/components/ThemedIcon";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Link, Tabs } from "expo-router";
 import { Pressable, View } from "react-native";
@@ -6,16 +7,21 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "orange",
         headerShown: false,
+        tabBarInactiveTintColor: "white",
+        tabBarActiveTintColor: "orange",
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
           title: "Now Playing",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="home" color={color} />
+          tabBarIcon: ({ focused }) => (
+            <ThemedIcon
+              size={"md"}
+              name="home"
+              variant={focused ? "iconCritical" : "iconDefault"}
+            />
           ),
         }}
       />
@@ -23,8 +29,12 @@ export default function TabLayout() {
         name="popular"
         options={{
           title: "Popular",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="cog" color={color} />
+          tabBarIcon: ({ focused }) => (
+            <ThemedIcon
+              size={"md"}
+              name="diamond"
+              variant={focused ? "iconCritical" : "iconDefault"}
+            />
           ),
         }}
       />
@@ -32,8 +42,12 @@ export default function TabLayout() {
         name="top_rated"
         options={{
           title: "Top Rated",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="cog" color={color} />
+          tabBarIcon: ({ focused }) => (
+            <ThemedIcon
+              size={"md"}
+              name="star"
+              variant={focused ? "iconCritical" : "iconDefault"}
+            />
           ),
         }}
       />
@@ -41,8 +55,12 @@ export default function TabLayout() {
         name="upcoming"
         options={{
           title: "Upcoming",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="cog" color={color} />
+          tabBarIcon: ({ focused }) => (
+            <ThemedIcon
+              size={"md"}
+              name="line-chart"
+              variant={focused ? "iconCritical" : "iconDefault"}
+            />
           ),
         }}
       />

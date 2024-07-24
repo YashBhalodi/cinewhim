@@ -1,9 +1,10 @@
+import { ThemedText } from "@/components/ThemedText";
 import { View, Text, StyleSheet } from "react-native";
 
 export default function Tab() {
   return (
     <View style={styles.container}>
-      <Text>Upcoming</Text>
+      <ThemedText>Upcoming</ThemedText>
     </View>
   );
 }

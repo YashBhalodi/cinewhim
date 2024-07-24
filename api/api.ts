@@ -1,3 +1,5 @@
+import { FeedType, Movie, SearchResult } from "./model";
+
 export const API_KEY = process.env.EXPO_PUBLIC_API_KEY;
 export const API_TOKEN = process.env.EXPO_PUBLIC_API_TOKEN;
 
@@ -9,18 +11,27 @@ const header = {
 const apiBaseUrl = `https://api.themoviedb.org/3`;
 const imagesBaseUrl = "https://image.tmdb.org/t/p";
 
-export const fetchNowPlaying = async ({ page = 1 }): Promise<any> => {
-  const options = {
-    method: "GET",
-    headers: header,
+const getRequestOptions = {
+  method: "GET",
+  headers: header,
+};
+
+const FEED_ENDPOINT: Record<FeedType, string> = {
+  now_playing: "now_playing",
+  popular: "popular",
+  top_rated: "top_rated",
+  upcoming: "upcoming",
+};
+
+export const getMovieFeedPromise = (feedType: FeedType) => {
+  return async (page = 1): Promise<SearchResult<Movie>> => {
+    const response = await fetch(
+      `${apiBaseUrl}/movie/${FEED_ENDPOINT[feedType]}?language=en-US&page=${page}`,
+      getRequestOptions
+    );
+
+    return await response.json();
   };
-
-  const response = await fetch(
-    `${apiBaseUrl}/movie/now_playing?language=en-US&page=${page}`,
-    options
-  );
-
-  return await response.json();
 };
 
 export const getImageUrl = (fileId: string): string => {
