@@ -1,18 +1,18 @@
+import { useFeedInfinityQuery } from "@/api/hooks";
+import MovieCardFeed from "@/components/MovieCardFeed";
 import { ThemedText } from "@/components/ThemedText";
-import { View, Text, StyleSheet } from "react-native";
 
-export default function Tab() {
-  return (
-    <View style={styles.container}>
-      <ThemedText>Popular</ThemedText>
-    </View>
-  );
+export default function Popular() {
+  const { data, isFetchingNextPage, hasNextPage, fetchNextPage, isLoading } =
+    useFeedInfinityQuery("popular");
+
+  if (isLoading || data === undefined) {
+    return <ThemedText>Loading</ThemedText>;
+  }
+
+  const loadMoreMovies = () => {
+    if (!isFetchingNextPage && hasNextPage) fetchNextPage();
+  };
+
+  return <MovieCardFeed movies={data} onLoadMore={loadMoreMovies} />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
