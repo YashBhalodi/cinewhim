@@ -4,15 +4,21 @@ import { Colors } from "@/constants/Colors";
 import { FontAwesome } from "@expo/vector-icons";
 import { ComponentProps } from "react";
 
-export type ThemedTextProps = Omit<
+export type ThemedIconProps = Omit<
   ComponentProps<typeof FontAwesome>,
   "color" | "size"
 > & {
-  variant?: "iconDefault" | "iconSubtle" | "iconCritical";
-  size?: "sm" | "md" | "lg" | "xlg";
+  variant?:
+    | "iconDefault"
+    | "iconSubtle"
+    | "iconRed"
+    | "iconNeutral"
+    | "iconGreen";
+  size?: "xs" | "sm" | "md" | "lg" | "xlg";
 };
 
 const SIZE_MAP = {
+  xs: 12,
   sm: 16,
   md: 20,
   lg: 24,
@@ -23,7 +29,7 @@ export function ThemedIcon({
   variant = "iconDefault",
   size = "md",
   ...rest
-}: ThemedTextProps) {
+}: ThemedIconProps) {
   const color = Colors.dark[variant];
 
   return <FontAwesome {...rest} color={color} size={SIZE_MAP[size]} />;

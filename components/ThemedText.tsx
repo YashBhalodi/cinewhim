@@ -3,46 +3,83 @@ import { Text, type TextProps, StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
 
 export type ThemedTextProps = TextProps & {
-  type?: "default" | "title" | "defaultSemiBold" | "subtitle" | "link";
+  type?:
+    | "body1"
+    | "body2"
+    | "body3"
+    | "heading1"
+    | "heading2"
+    | "heading3"
+    | "label1"
+    | "label2"
+    | "label3";
+  color?:
+    | "textDefault"
+    | "textSubtle"
+    | "textRed"
+    | "textGreen"
+    | "textNeutral";
 };
 
 export function ThemedText({
   style,
-  type = "default",
+  type = "body1",
+  color = "textDefault",
   ...rest
 }: ThemedTextProps) {
-  const color = Colors.dark.text;
-
   return (
     <Text
-      style={[{ color }, styles[type] ? styles[type] : undefined, style]}
+      style={[
+        { color: Colors.dark[color] },
+        styles[type] ? styles[type] : undefined,
+        style,
+      ]}
       {...rest}
     />
   );
 }
 
 const styles = StyleSheet.create({
-  default: {
+  body1: {
     fontSize: 16,
     lineHeight: 24,
   },
-  defaultSemiBold: {
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: "600",
+  body2: {
+    fontSize: 14,
+    lineHeight: 20,
   },
-  title: {
-    fontSize: 32,
-    fontWeight: "bold",
+  body3: {
+    fontSize: 12,
+    lineHeight: 16,
+  },
+  heading1: {
+    fontSize: 28,
+    lineHeight: 36,
+    fontWeight: 700,
+  },
+  heading2: {
+    fontSize: 24,
     lineHeight: 32,
+    fontWeight: 700,
   },
-  subtitle: {
+  heading3: {
     fontSize: 20,
-    fontWeight: "bold",
+    lineHeight: 28,
+    fontWeight: 700,
   },
-  link: {
-    lineHeight: 30,
+  label1: {
     fontSize: 16,
-    color: "#0a7ea4",
+    lineHeight: 24,
+    fontWeight: 600,
+  },
+  label2: {
+    fontSize: 14,
+    lineHeight: 20,
+    fontWeight: 600,
+  },
+  label3: {
+    fontSize: 12,
+    lineHeight: 16,
+    fontWeight: 600,
   },
 });
