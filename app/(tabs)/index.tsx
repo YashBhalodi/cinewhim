@@ -1,7 +1,9 @@
 import { useFeedInfinityQuery } from "@/api/hooks";
+import MovieCard from "@/components/MovieCard";
 import { ThemedText } from "@/components/ThemedText";
+import { Link } from "expo-router";
 import _ from "lodash";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, View } from "react-native";
 
 export default function Tab() {
   const { data, isFetchingNextPage, hasNextPage, fetchNextPage, isLoading } =
@@ -15,19 +17,22 @@ export default function Tab() {
     <FlatList
       data={data}
       renderItem={({ item }) => (
-        <ThemedText style={{ paddingVertical: 16 }}>{item.title}</ThemedText>
+        <View style={{ flex: 1, marginHorizontal: 4 }}>
+          <Link href={`/detail/${item.id}`} asChild>
+            <MovieCard movie={item} />
+          </Link>
+        </View>
       )}
       keyExtractor={({ id }) => id.toString()}
+      numColumns={2}
       contentInsetAdjustmentBehavior="automatic"
       onEndReached={() => {
         if (!isFetchingNextPage && hasNextPage) fetchNextPage();
       }}
+      contentContainerStyle={{
+        marginHorizontal: -4,
+        gap: 8,
+      }}
     />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: "100%",
-  },
-});
