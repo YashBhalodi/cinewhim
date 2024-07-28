@@ -1,4 +1,10 @@
-import { FeedType, Movie, MovieDetails, SearchResult } from "./model";
+import {
+  CollectionDetails,
+  FeedType,
+  Movie,
+  MovieDetails,
+  SearchResult,
+} from "./model";
 
 export const API_KEY = process.env.EXPO_PUBLIC_API_KEY;
 export const API_TOKEN = process.env.EXPO_PUBLIC_API_TOKEN;
@@ -34,6 +40,16 @@ export const getMovieFeedPromise = (feedType: FeedType) => {
   };
 };
 
+export const getMovieRecommendationFeedPromise = (movieId: number) => {
+  return async (page = 1): Promise<SearchResult<Movie>> => {
+    const response = await fetch(
+      `${apiBaseUrl}/movie/${movieId}/recommendations?language=en-US&page=${page}`,
+      getRequestOptions
+    );
+    return response.json();
+  };
+};
+
 export const getMovieDetail = async (
   movieId: string
 ): Promise<MovieDetails> => {
@@ -42,6 +58,16 @@ export const getMovieDetail = async (
     getRequestOptions
   );
 
+  return await response.json();
+};
+
+export const getCollectionMovies = async (
+  collectionId: number
+): Promise<CollectionDetails> => {
+  const response = await fetch(
+    `${apiBaseUrl}/collection/${collectionId}?language=en-US`,
+    getRequestOptions
+  );
   return await response.json();
 };
 
