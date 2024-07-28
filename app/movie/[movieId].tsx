@@ -5,8 +5,10 @@ import {
   useRecommendationFeedQuery,
 } from "@/api/hooks";
 import { Collection, Genre } from "@/api/model";
+import ErrorScreen from "@/components/ErrorScreen";
 import GenreTag from "@/components/GenreTag";
 import IconButton from "@/components/IconButton";
+import Loader from "@/components/Loader";
 import MovieCardFeed from "@/components/MovieCardFeed";
 import RatingView from "@/components/RatingView";
 import { ThemedIcon } from "@/components/ThemedIcon";
@@ -78,7 +80,11 @@ const CollectionPartsFeed = (props: { collection: Collection }) => {
       <ThemedText type="heading3" color="textSubtle">
         {collection.name}
       </ThemedText>
-      {data ? (
+      {isLoading ? (
+        <Loader componentKey="collection_movies" />
+      ) : error || !data ? (
+        <ErrorScreen componentKey="collection_movies" error={error} />
+      ) : data ? (
         <MovieCardFeed
           movies={data?.parts}
           isLoadingMore={false}
@@ -97,14 +103,23 @@ const RecommendationFeed = (props: { movieId: number }) => {
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
+    isError,
   } = useRecommendationFeedQuery(props.movieId);
+
+  if (!isLoading && !isError && data?.length === 0) {
+    return null;
+  }
 
   return (
     <View style={styles.sectionContainer}>
       <ThemedText type="heading3" color="textSubtle">
         You may also like...
       </ThemedText>
-      {data ? (
+      {isLoading ? (
+        <Loader componentKey="recommended_movies" />
+      ) : error || !data ? (
+        <ErrorScreen componentKey="recommended_movies" error={error} />
+      ) : data ? (
         <MovieCardFeed
           movies={data}
           isLoadingMore={isFetchingNextPage}
@@ -124,15 +139,14 @@ const MovieDetail = () => {
   const navigation = useNavigation();
   const { top, bottom } = useSafeAreaInsets();
 
-  if (isLoading || data === undefined) {
-    return (
-      <ThemedView style={styles.loaderContainer}>
-        <ThemedText>loading</ThemedText>
-      </ThemedView>
-    );
+  if (isLoading) {
+    return <Loader componentKey="movie_detail" />;
   }
 
-  console.log(data.id);
+  if (error || !data) {
+    return <ErrorScreen componentKey="movie_detail" error={error} />;
+  }
+
   return (
     <ImageBackground
       source={getImageUrl(data.backdrop_path)}
@@ -154,7 +168,7 @@ const MovieDetail = () => {
         />
       </View>
       <ScrollView
-        style={[styles.listStyle]}
+        style={styles.listStyle}
         contentContainerStyle={[
           styles.listContentContainer,
           { paddingTop: top + 48, paddingBottom: bottom + 48 },
@@ -166,12 +180,18 @@ const MovieDetail = () => {
             <View style={styles.cardContainer}>
               <RatingView rating={data.vote_average} size="md" />
             </View>
-            <View style={styles.cardContainer}>
-              <ThemedIcon name="calendar" size="sm" variant="iconSubtle" />
-              <ThemedText type="body2">
-                {getReleaseDateText(data.release_date)}
-              </ThemedText>
-            </View>
+            {getReleaseDateText(data.release_date) ? (
+              <View style={styles.cardContainer}>
+                <ThemedIcon name="calendar" size="sm" variant="iconSubtle" />
+                <ThemedText type="body2">
+                  {getReleaseDateText(data.release_date)}
+                </ThemedText>
+              </View>
+            ) : (
+              <View style={styles.cardContainer}>
+                <ThemedText type="body2">{data.status}</ThemedText>
+              </View>
+            )}
             <View style={styles.cardContainer}>
               <ThemedIcon name="clock-o" size="sm" variant="iconSubtle" />
               <ThemedText type="body2">
@@ -265,6 +285,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "flex-start",
     justifyContent: "flex-start",
+    minWidth: "100%",
   },
 });
 

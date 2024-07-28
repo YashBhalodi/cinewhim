@@ -1,10 +1,9 @@
 import IconButton from "@/components/IconButton";
 import { ThemedIcon } from "@/components/ThemedIcon";
 import { Colors } from "@/constants/Colors";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { BlurView } from "expo-blur";
-import { Link, Tabs } from "expo-router";
-import { Pressable, StyleSheet, View } from "react-native";
+import { Tabs } from "expo-router";
+import { StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function TabLayout() {
