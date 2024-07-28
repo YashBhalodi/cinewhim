@@ -10,6 +10,7 @@ import Animated, {
 } from "react-native-reanimated";
 import RatingView from "./RatingView";
 import { ThemedText } from "./ThemedText";
+import { getReleaseDateText } from "@/utils/formattingUtils";
 
 interface MovieCardProps {
   movie: Movie;
@@ -66,15 +67,11 @@ const MovieCard = (props: MovieCardProps) => {
           }}
         >
           <View style={styles.ratingContainer}>
-            <RatingView rating={movie.vote_average} />
+            <RatingView rating={movie.vote_average} size="sm" />
           </View>
           <View style={styles.dateContainer}>
             <ThemedText type="label3" color={"textSubtle"}>
-              {new Date(movie.release_date).toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "short",
-                year: "numeric",
-              })}
+              {getReleaseDateText(movie.release_date)}
             </ThemedText>
           </View>
 
