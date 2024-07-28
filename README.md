@@ -1,6 +1,6 @@
 # Welcom to CineWhim
 
-This is a showcase app built with [Expo](https://expo.dev), [React Native](https://reactnative.dev/), [Expo router](https://docs.expo.dev/router/introduction/), [React Query](https://tanstack.com/query/v3). This application uses [TMDB](https://developer.themoviedb.org/reference/intro/getting-started) api as backend to allow users to explore all movies.
+This is a showcase app built with [Expo](https://expo.dev), [React Native](https://reactnative.dev/), [Expo router](https://docs.expo.dev/router/introduction/), [React Query](https://tanstack.com/query/v3). This application uses [TMDB API](https://developer.themoviedb.org/reference/intro/getting-started) as backend to allow users to explore all movies.
 
 ## Features
 
@@ -59,7 +59,7 @@ EXPO_PUBLIC_API_TOKEN=YOUR_TMDB_API_TOKEN
 
 ### Animation and UX Enhancements
 
-- Show/hide the header and bottom tab bar with animation while user is scrolling the movie feed
+- [ ] Show/hide the header and bottom tab bar with animation while user is scrolling the movie feed
 
 ### Personalisation
 
