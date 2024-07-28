@@ -69,11 +69,13 @@ const MovieCard = (props: MovieCardProps) => {
           <View style={styles.ratingContainer}>
             <RatingView rating={movie.vote_average} size="sm" />
           </View>
-          <View style={styles.dateContainer}>
-            <ThemedText type="label3" color={"textSubtle"}>
-              {getReleaseDateText(movie.release_date)}
-            </ThemedText>
-          </View>
+          {getReleaseDateText(movie.release_date) ? (
+            <View style={styles.dateContainer}>
+              <ThemedText type="label3" color="textSubtle">
+                {getReleaseDateText(movie.release_date)}
+              </ThemedText>
+            </View>
+          ) : null}
 
           <Animated.View
             style={[styles.titleContainer, titleContainerAnimatedStyle]}

@@ -5,6 +5,10 @@ export const getRuntimeText = (runtime: number): string => {
 };
 
 export const getReleaseDateText = (releaseDate: string) => {
+  if (releaseDate === "") {
+    return undefined;
+  }
+
   return new Date(releaseDate).toLocaleDateString("en-US", {
     day: "numeric",
     month: "short",
