@@ -28,7 +28,6 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen name="about" options={{ title: "About" }} />
-          <Stack.Screen name="favourite" options={{ title: "Favourite" }} />
           <Stack.Screen name="movie" options={{ headerShown: false }} />
         </Stack>
       </ThemeProvider>

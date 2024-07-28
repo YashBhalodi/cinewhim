@@ -149,16 +149,7 @@ const MovieDetail = () => {
       source={getImageUrl(data.backdrop_path)}
       imageStyle={styles.backdropImage}
     >
-      <View
-        style={{
-          position: "absolute",
-          top: top,
-          zIndex: 10,
-          paddingHorizontal: 8,
-          paddingVertical: 8,
-          width: "100%",
-        }}
-      >
+      <View style={[styles.headerContainer, { top }]}>
         <IconButton
           iconProps={{ name: "chevron-left", variant: "iconSubtle" }}
           onPress={navigation.goBack}
@@ -225,6 +216,13 @@ const MovieDetail = () => {
 
 const styles = StyleSheet.create({
   safeAreaContainer: { height: "100%", width: "100%", position: "relative" },
+  headerContainer: {
+    position: "absolute",
+    zIndex: 10,
+    paddingHorizontal: 8,
+    paddingVertical: 8,
+    width: "100%",
+  },
   loaderContainer: {
     height: "100%",
     width: "100%",
