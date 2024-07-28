@@ -27,7 +27,10 @@ export default function RootLayout() {
               headerShown: false,
             }}
           />
-          <Stack.Screen name="about" options={{ title: "About" }} />
+          <Stack.Screen
+            name="about"
+            options={{ title: "About", headerShown: false }}
+          />
           <Stack.Screen name="movie" options={{ headerShown: false }} />
         </Stack>
       </ThemeProvider>

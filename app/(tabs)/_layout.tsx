@@ -1,7 +1,7 @@
 import { IconButton, ThemedIcon, ThemedText } from "@/components";
 import { Colors } from "@/constants/Colors";
 import { BlurView } from "expo-blur";
-import { Tabs } from "expo-router";
+import { Link, Tabs } from "expo-router";
 import { StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -79,7 +79,9 @@ export default function TabLayout() {
           CineWhim
         </ThemedText>
 
-        <IconButton iconProps={{ name: "heart-o" }} />
+        <Link href={"about"} asChild>
+          <IconButton iconProps={{ name: "info" }} />
+        </Link>
       </BlurView>
     </View>
   );
