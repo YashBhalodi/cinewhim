@@ -56,14 +56,7 @@ const PosterImage = (props: { posterImage: string }) => {
 
 const MovieGenres = (props: { geners: Genre[] }) => {
   return (
-    <View
-      style={{
-        gap: 4,
-        flexDirection: "row",
-        alignItems: "center",
-        flexWrap: "wrap",
-      }}
-    >
+    <View style={styles.genresContainer}>
       {props.geners.map((g) => (
         <GenreTag genre={g} key={g.id} />
       ))}
@@ -264,6 +257,12 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     gap: 4,
+  },
+  genresContainer: {
+    gap: 4,
+    flexDirection: "row",
+    alignItems: "center",
+    flexWrap: "wrap",
   },
   cardsContainer: {
     flexDirection: "row",
