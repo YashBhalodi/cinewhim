@@ -14,5 +14,11 @@ export default function Popular() {
     if (!isFetchingNextPage && hasNextPage) fetchNextPage();
   };
 
-  return <MovieCardFeed movies={data} onLoadMore={loadMoreMovies} />;
+  return (
+    <MovieCardFeed
+      movies={data}
+      onLoadMore={loadMoreMovies}
+      isLoadingMore={isFetchingNextPage}
+    />
+  );
 }

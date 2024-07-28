@@ -3,19 +3,21 @@ import MovieCard from "@/components/MovieCard";
 import { Link } from "expo-router";
 import { useCallback } from "react";
 import { FlatList, ListRenderItem, StyleSheet, View } from "react-native";
+import { ThemedView } from "./ThemedView";
 
 interface MovieCardFeedProps {
   movies: Movie[];
   onLoadMore: () => void;
+  isLoadingMore?: boolean;
 }
 
 const MovieCardFeed = (props: MovieCardFeedProps) => {
-  const { movies, onLoadMore } = props;
+  const { movies, onLoadMore, isLoadingMore = false } = props;
 
   const renderItem: ListRenderItem<Movie> = useCallback(
     ({ item }) => (
       <View style={styles.listItemContainer}>
-        <Link href={`/detail/${item.id}`} asChild>
+        <Link href={`/movie/${item.id}`} asChild>
           <MovieCard movie={item} />
         </Link>
       </View>
@@ -37,6 +39,20 @@ const MovieCardFeed = (props: MovieCardFeedProps) => {
       contentInsetAdjustmentBehavior="automatic"
       onEndReached={onLoadMore}
       contentContainerStyle={styles.listContentContainer}
+      ListFooterComponent={() => {
+        if (isLoadingMore) {
+          return (
+            <View style={{ flexDirection: "row" }}>
+              <ThemedView
+                style={[styles.loadingItemContainer, styles.listItemContainer]}
+              />
+              <ThemedView
+                style={[styles.loadingItemContainer, styles.listItemContainer]}
+              />
+            </View>
+          );
+        }
+      }}
     />
   );
 };
@@ -51,6 +67,10 @@ const styles = StyleSheet.create({
   listItemContainer: {
     flex: 1,
     marginHorizontal: 4,
+  },
+  loadingItemContainer: {
+    aspectRatio: 1 / 1.5,
+    borderRadius: 8,
   },
 });
 
