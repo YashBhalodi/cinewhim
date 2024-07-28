@@ -34,6 +34,405 @@ exports[`GenreTag renders correctly 1`] = `
 </View>
 `;
 
+exports[`IconButton renders correctly 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  jestAnimatedStyle={
+    {
+      "value": {
+        "transform": [
+          {
+            "scale": 1,
+          },
+        ],
+      },
+    }
+  }
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "aspectRatio": 1,
+      "backgroundColor": "rgba(0,0,0,0.3)",
+      "borderColor": "red",
+      "borderRadius": 18,
+      "height": 36,
+      "justifyContent": "center",
+      "transform": [
+        {
+          "scale": 1,
+        },
+      ],
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    selectable={false}
+    style={
+      [
+        {
+          "color": "white",
+          "fontSize": 20,
+        },
+        undefined,
+        {
+          "fontFamily": "FontAwesome",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        {},
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`MovieCard renders correctly 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "borderRadius": 8,
+      "overflow": "hidden",
+    }
+  }
+>
+  <View
+    collapsable={false}
+    jestAnimatedStyle={
+      {
+        "value": {
+          "borderRadius": 8,
+          "overflow": "hidden",
+          "transform": [
+            {
+              "scale": 1,
+            },
+          ],
+        },
+      }
+    }
+    style={
+      {
+        "borderRadius": 8,
+        "overflow": "hidden",
+        "transform": [
+          {
+            "scale": 1,
+          },
+        ],
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "aspectRatio": 0.6666666666666666,
+          "flexDirection": "column",
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <ViewManagerAdapter_ExpoImage
+        bottom={0}
+        containerViewRef={"[React.ref]"}
+        contentFit="cover"
+        contentPosition={
+          {
+            "left": 0,
+            "top": "50%",
+          }
+        }
+        left={0}
+        nativeViewRef={"[React.ref]"}
+        onError={[Function]}
+        onLoad={[Function]}
+        onLoadEnd={[Function]}
+        onLoadStart={[Function]}
+        onProgress={[Function]}
+        placeholder={[]}
+        position="absolute"
+        right={0}
+        source={
+          [
+            {
+              "uri": "https://image.tmdb.org/t/p/original//hPfWHgq07nXbeldwEGxWB4JqwtE.jpg",
+            },
+          ]
+        }
+        style={
+          {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        top={0}
+        transition={null}
+      />
+      <View
+        style={
+          {
+            "position": "absolute",
+            "right": 8,
+            "top": 8,
+          }
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "backgroundColor": "#151718",
+              },
+              {
+                "alignItems": "center",
+                "backgroundColor": "rgba(0,0,0,0.6)",
+                "borderColor": "rgba(256,256,256,0.3)",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "gap": 4,
+                "paddingHorizontal": 8,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              [
+                {
+                  "color": "#d0d4cf",
+                  "fontSize": 12,
+                },
+                undefined,
+                {
+                  "fontFamily": "FontAwesome",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "color": "#d0d4cf",
+                },
+                {
+                  "fontSize": 12,
+                  "lineHeight": 16,
+                },
+                undefined,
+              ]
+            }
+          >
+            5.8
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "backgroundColor": "rgba(0,0,0,0.6)",
+            "borderColor": "rgba(256,256,256,0.3)",
+            "borderRadius": 4,
+            "borderWidth": 1,
+            "left": 8,
+            "padding": 4,
+            "position": "absolute",
+            "top": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#d4d7d9",
+              },
+              {
+                "fontSize": 12,
+                "fontWeight": 600,
+                "lineHeight": 16,
+              },
+              undefined,
+            ]
+          }
+        >
+          May 31, 2024
+        </Text>
+      </View>
+      <View
+        collapsable={false}
+        jestAnimatedStyle={
+          {
+            "value": {
+              "opacity": 1,
+            },
+          }
+        }
+        style={
+          {
+            "backgroundColor": "rgba(0,0,0,0.6)",
+            "gap": 4,
+            "opacity": 1,
+            "paddingHorizontal": 8,
+            "paddingVertical": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#ECEDEE",
+              },
+              {
+                "fontSize": 20,
+                "fontWeight": 700,
+                "lineHeight": 28,
+              },
+              undefined,
+            ]
+          }
+        >
+          In a Violent Nature
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`RatingView renders correctly 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#151718",
+      },
+      {
+        "alignItems": "center",
+        "backgroundColor": "rgba(0,0,0,0.6)",
+        "borderColor": "rgba(256,256,256,0.3)",
+        "borderRadius": 4,
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "gap": 4,
+        "paddingHorizontal": 8,
+        "paddingVertical": 4,
+      },
+    ]
+  }
+>
+  <Text
+    allowFontScaling={false}
+    selectable={false}
+    style={
+      [
+        {
+          "color": "#d0d4cf",
+          "fontSize": 16,
+        },
+        undefined,
+        {
+          "fontFamily": "FontAwesome",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        {},
+      ]
+    }
+  >
+    
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "color": "#d0d4cf",
+        },
+        {
+          "fontSize": 14,
+          "lineHeight": 20,
+        },
+        undefined,
+      ]
+    }
+  >
+    5.8
+  </Text>
+</View>
+`;
+
 exports[`ThemedIcon renders correctly 1`] = `<Text />`;
 
 exports[`ThemedText renders correctly 1`] = `
