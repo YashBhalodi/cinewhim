@@ -26,32 +26,7 @@ export default function RootLayout() {
           <Stack.Screen
             name="(tabs)"
             options={{
-              headerShown: true,
-              title: "",
-              headerRight: (props) => {
-                return (
-                  <Link href={"about"} asChild push>
-                    <Pressable>
-                      <ThemedIcon size={"md"} name="cog" />
-                    </Pressable>
-                  </Link>
-                );
-              },
-              headerLeft: (props) => {
-                return (
-                  <Link href={"favourite"} asChild push>
-                    <Pressable>
-                      <ThemedIcon size={"md"} name="heart" />
-                    </Pressable>
-                  </Link>
-                );
-              },
-              headerSearchBarOptions: {
-                onChangeText: console.log,
-                textColor: "white",
-                tintColor: "orange",
-                hideNavigationBar: true,
-              },
+              headerShown: false,
             }}
           />
           <Stack.Screen name="about" options={{ title: "About" }} />
