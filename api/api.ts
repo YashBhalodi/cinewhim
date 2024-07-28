@@ -36,7 +36,15 @@ export const getMovieFeedPromise = (feedType: FeedType) => {
       getRequestOptions
     );
 
-    return await response.json();
+    const parsedResponse = await response.json();
+
+    if (parsedResponse.success !== true) {
+      throw new Error("Something went wrong while fetching movies", {
+        cause: response,
+      });
+    }
+
+    return parsedResponse;
   };
 };
 
@@ -46,7 +54,15 @@ export const getMovieRecommendationFeedPromise = (movieId: number) => {
       `${apiBaseUrl}/movie/${movieId}/recommendations?language=en-US&page=${page}`,
       getRequestOptions
     );
-    return response.json();
+    const parsedResponse = await response.json();
+
+    if (parsedResponse.success !== true) {
+      throw new Error("Something went wrong while fetching recommendations", {
+        cause: response,
+      });
+    }
+
+    return parsedResponse;
   };
 };
 
@@ -58,7 +74,15 @@ export const getMovieDetail = async (
     getRequestOptions
   );
 
-  return await response.json();
+  const parsedResponse = await response.json();
+
+  if (parsedResponse.success !== true) {
+    throw new Error("Something went wrong while fetching movie detail", {
+      cause: response,
+    });
+  }
+
+  return parsedResponse;
 };
 
 export const getCollectionMovies = async (
@@ -68,7 +92,15 @@ export const getCollectionMovies = async (
     `${apiBaseUrl}/collection/${collectionId}?language=en-US`,
     getRequestOptions
   );
-  return await response.json();
+  const parsedResponse = await response.json();
+
+  if (parsedResponse.success !== true) {
+    throw new Error("Something went wrong while fetching collection movies", {
+      cause: response,
+    });
+  }
+
+  return parsedResponse;
 };
 
 export const getImageUrl = (fileId: string): string => {
