@@ -28,7 +28,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const PosterImage = (props: { posterImage: string }) => {
   const opacity = useSharedValue<number>(0);
-  const scale = useSharedValue<number>(0.9);
+  const scale = useSharedValue<number>(0.8);
 
   const animatedStyle = useAnimatedStyle(
     () => ({

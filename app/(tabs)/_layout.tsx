@@ -26,7 +26,7 @@ export default function TabLayout() {
             tabBarIcon: ({ focused }) => (
               <ThemedIcon
                 size={"md"}
-                name="home"
+                name="play"
                 variant={focused ? "iconGreen" : "iconSubtle"}
               />
             ),
