@@ -38,7 +38,7 @@ export const getMovieFeedPromise = (feedType: FeedType) => {
 
     const parsedResponse = await response.json();
 
-    if (parsedResponse.success !== true) {
+    if (parsedResponse.success === false) {
       throw new Error("Something went wrong while fetching movies", {
         cause: response,
       });
@@ -56,7 +56,7 @@ export const getMovieRecommendationFeedPromise = (movieId: number) => {
     );
     const parsedResponse = await response.json();
 
-    if (parsedResponse.success !== true) {
+    if (parsedResponse.success === false) {
       throw new Error("Something went wrong while fetching recommendations", {
         cause: response,
       });
@@ -76,7 +76,7 @@ export const getMovieDetail = async (
 
   const parsedResponse = await response.json();
 
-  if (parsedResponse.success !== true) {
+  if (parsedResponse.success === false) {
     throw new Error("Something went wrong while fetching movie detail", {
       cause: response,
     });
@@ -94,7 +94,7 @@ export const getCollectionMovies = async (
   );
   const parsedResponse = await response.json();
 
-  if (parsedResponse.success !== true) {
+  if (parsedResponse.success === false) {
     throw new Error("Something went wrong while fetching collection movies", {
       cause: response,
     });
