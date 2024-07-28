@@ -1,4 +1,4 @@
-import { FeedType, Movie, SearchResult } from "./model";
+import { FeedType, Movie, MovieDetails, SearchResult } from "./model";
 
 export const API_KEY = process.env.EXPO_PUBLIC_API_KEY;
 export const API_TOKEN = process.env.EXPO_PUBLIC_API_TOKEN;
@@ -32,6 +32,17 @@ export const getMovieFeedPromise = (feedType: FeedType) => {
 
     return await response.json();
   };
+};
+
+export const getMovieDetail = async (
+  movieId: string
+): Promise<MovieDetails> => {
+  const response = await fetch(
+    `${apiBaseUrl}/movie/${movieId}?language=en-US`,
+    getRequestOptions
+  );
+
+  return await response.json();
 };
 
 export const getImageUrl = (fileId: string): string => {

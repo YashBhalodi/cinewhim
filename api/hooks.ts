@@ -1,5 +1,5 @@
-import { useInfiniteQuery } from "@tanstack/react-query";
-import { getMovieFeedPromise } from "./api";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { getMovieDetail, getMovieFeedPromise } from "./api";
 import _ from "lodash";
 import { FeedType, Movie } from "./model";
 
@@ -20,5 +20,12 @@ export const useFeedInfinityQuery = (feedType: FeedType) => {
     initialPageParam: 1,
     select: (data): Movie[] =>
       _.uniqBy(_.flatten(_.map(data.pages, "results")), "id"),
+  });
+};
+
+export const useMovieDetailQuery = (movieId: string) => {
+  return useQuery({
+    queryKey: [`movie::${movieId}`],
+    queryFn: () => getMovieDetail(movieId),
   });
 };

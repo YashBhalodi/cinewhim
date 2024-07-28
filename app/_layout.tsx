@@ -4,12 +4,11 @@ import { Link, Stack } from "expo-router";
 
 export { ErrorBoundary } from "expo-router";
 
-import NetInfo from "@react-native-community/netinfo";
-import { onlineManager } from "@tanstack/react-query";
-import { Pressable, View } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
-import { DarkTheme, ThemeProvider } from "@react-navigation/native";
 import { ThemedIcon } from "@/components/ThemedIcon";
+import NetInfo from "@react-native-community/netinfo";
+import { DarkTheme, ThemeProvider } from "@react-navigation/native";
+import { onlineManager } from "@tanstack/react-query";
+import { Pressable } from "react-native";
 
 onlineManager.setEventListener((setOnline) => {
   return NetInfo.addEventListener((state) => {
@@ -57,6 +56,7 @@ export default function RootLayout() {
           />
           <Stack.Screen name="about" options={{ title: "About" }} />
           <Stack.Screen name="favourite" options={{ title: "Favourite" }} />
+          <Stack.Screen name="movie" options={{ headerShown: false }} />
         </Stack>
       </ThemeProvider>
     </QueryClientProvider>
