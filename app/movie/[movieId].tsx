@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
   listContentContainer: {
     paddingVertical: 32,
     gap: 16,
-    alignItems: "center",
+    alignItems: "stretch",
     paddingHorizontal: 8,
   },
   titleTagLineContainer: {
