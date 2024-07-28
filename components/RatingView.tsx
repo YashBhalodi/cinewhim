@@ -8,6 +8,7 @@ type Size = "sm" | "md" | "lg";
 
 interface RatingViewProps {
   rating: number;
+  voteCount: number;
   size: Size;
 }
 
@@ -45,9 +46,13 @@ const SIZE_MAP: Record<
 };
 
 const RatingView = (props: RatingViewProps) => {
-  const { rating, size = "md" } = props;
+  const { rating, voteCount, size = "md" } = props;
 
   const ratingType = rating > 7 ? "good" : rating < 5 ? "bad" : "neutral";
+
+  if (voteCount !== undefined && voteCount === 0) {
+    return null;
+  }
 
   return (
     <ThemedView style={styles.container}>

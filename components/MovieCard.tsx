@@ -67,7 +67,11 @@ const MovieCard = (props: MovieCardProps) => {
           }}
         >
           <View style={styles.ratingContainer}>
-            <RatingView rating={movie.vote_average} size="sm" />
+            <RatingView
+              rating={movie.vote_average}
+              voteCount={movie.vote_count}
+              size="sm"
+            />
           </View>
           {getReleaseDateText(movie.release_date) ? (
             <View style={styles.dateContainer}>

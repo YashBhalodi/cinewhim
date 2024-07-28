@@ -177,9 +177,15 @@ const MovieDetail = () => {
         <PosterImage posterImage={data.poster_path} />
         <View style={styles.summaryCardsContainer}>
           <ThemedView style={styles.cardsContainer}>
-            <View style={styles.cardContainer}>
-              <RatingView rating={data.vote_average} size="md" />
-            </View>
+            {data.vote_count > 0 ? (
+              <View style={styles.cardContainer}>
+                <RatingView
+                  rating={data.vote_average}
+                  voteCount={data.vote_count}
+                  size="md"
+                />
+              </View>
+            ) : null}
             {getReleaseDateText(data.release_date) ? (
               <View style={styles.cardContainer}>
                 <ThemedIcon name="calendar" size="sm" variant="iconSubtle" />
