@@ -64,7 +64,7 @@ const MovieCardFeed = (props: MovieCardFeedProps) => {
         styles.listContentContainer,
         isHorizontal
           ? styles.horizontalListContentContainer
-          : { paddingTop: top + 32 },
+          : { paddingTop: top + 72 },
       ]}
       style={isHorizontal ? styles.horizontalListStyle : undefined}
       ListFooterComponent={() => {
