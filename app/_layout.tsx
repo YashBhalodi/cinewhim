@@ -20,7 +20,10 @@ export default function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider value={DarkTheme}>
-        <Stack initialRouteName="(tabs)">
+        <Stack
+          initialRouteName="(tabs)"
+          screenOptions={{ animation: "slide_from_right" }}
+        >
           <Stack.Screen
             name="(tabs)"
             options={{
