@@ -1,5 +1,6 @@
 import IconButton from "@/components/IconButton";
 import { ThemedIcon } from "@/components/ThemedIcon";
+import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 import { BlurView } from "expo-blur";
 import { Tabs } from "expo-router";
@@ -76,6 +77,11 @@ export default function TabLayout() {
         experimentalBlurMethod="dimezisBlurView"
         intensity={30}
       >
+        <View>
+          <ThemedText type="heading3" color="textGreen">
+            CineWhim
+          </ThemedText>
+        </View>
         <IconButton iconProps={{ name: "heart-o" }} />
       </BlurView>
     </View>
@@ -91,7 +97,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     width: "100%",
     paddingVertical: 16,
-    flexDirection: "row-reverse",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     gap: 16,
   },
 });
