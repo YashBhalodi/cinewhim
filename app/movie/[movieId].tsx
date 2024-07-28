@@ -198,7 +198,11 @@ const MovieDetail = () => {
         <View style={styles.titleTagLineContainer}>
           <ThemedText type="heading2">{data.title}</ThemedText>
           {data.tagline ? (
-            <ThemedText type="label2" color="textSubtle">
+            <ThemedText
+              type="label2"
+              color="textSubtle"
+              style={styles.centerText}
+            >
               {data.tagline}
             </ThemedText>
           ) : null}
@@ -260,6 +264,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 4,
   },
+  centerText: { textAlign: "center" },
   genresContainer: {
     gap: 4,
     flexDirection: "row",
