@@ -1,6 +1,6 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import React, { ComponentProps, useCallback } from "react";
-import { ThemedIcon, ThemedIconProps } from "./ThemedIcon";
+import ThemedIcon, { ThemedIconProps } from "./ThemedIcon";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,

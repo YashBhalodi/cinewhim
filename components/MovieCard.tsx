@@ -9,7 +9,7 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 import RatingView from "./RatingView";
-import { ThemedText } from "./ThemedText";
+import ThemedText from "./ThemedText";
 import { getReleaseDateText } from "@/utils/formattingUtils";
 
 interface MovieCardProps {

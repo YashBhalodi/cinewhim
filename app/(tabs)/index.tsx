@@ -1,7 +1,5 @@
 import { useFeedInfinityQuery } from "@/api/hooks";
-import ErrorScreen from "@/components/ErrorScreen";
-import Loader from "@/components/Loader";
-import MovieCardFeed from "@/components/MovieCardFeed";
+import { ErrorScreen, Loader, MovieCardFeed } from "@/components";
 
 export default function NowPlaying() {
   const {

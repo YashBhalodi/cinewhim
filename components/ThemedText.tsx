@@ -21,7 +21,7 @@ export type ThemedTextProps = TextProps & {
     | "textNeutral";
 };
 
-export function ThemedText({
+export default function ThemedText({
   style,
   type = "body1",
   color = "textDefault",

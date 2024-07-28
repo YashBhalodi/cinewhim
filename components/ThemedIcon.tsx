@@ -25,7 +25,7 @@ const SIZE_MAP = {
   xlg: 28,
 };
 
-export function ThemedIcon({
+export default function ThemedIcon({
   variant = "iconDefault",
   size = "md",
   ...rest

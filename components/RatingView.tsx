@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { ThemedIcon, ThemedIconProps } from "./ThemedIcon";
-import { ThemedText, ThemedTextProps } from "./ThemedText";
-import { ThemedView } from "./ThemedView";
+import ThemedIcon, { ThemedIconProps } from "./ThemedIcon";
+import ThemedText, { ThemedTextProps } from "./ThemedText";
+import ThemedView from "./ThemedView";
 
 type Size = "sm" | "md" | "lg";
 

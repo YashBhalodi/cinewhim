@@ -1,5 +1,5 @@
-import { ThemedText } from "@/components/ThemedText";
-import { View, Text, StyleSheet } from "react-native";
+import { ThemedText } from "@/components";
+import { View, StyleSheet } from "react-native";
 
 export default function Tab() {
   return (

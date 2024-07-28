@@ -1,14 +1,12 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import { Link, Stack } from "expo-router";
+import { Stack } from "expo-router";
 
 export { ErrorBoundary } from "expo-router";
 
-import { ThemedIcon } from "@/components/ThemedIcon";
 import NetInfo from "@react-native-community/netinfo";
 import { DarkTheme, ThemeProvider } from "@react-navigation/native";
 import { onlineManager } from "@tanstack/react-query";
-import { Pressable } from "react-native";
 
 onlineManager.setEventListener((setOnline) => {
   return NetInfo.addEventListener((state) => {

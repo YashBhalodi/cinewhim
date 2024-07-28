@@ -1,6 +1,4 @@
-import IconButton from "@/components/IconButton";
-import { ThemedIcon } from "@/components/ThemedIcon";
-import { ThemedText } from "@/components/ThemedText";
+import { IconButton, ThemedIcon, ThemedText } from "@/components";
 import { Colors } from "@/constants/Colors";
 import { BlurView } from "expo-blur";
 import { Tabs } from "expo-router";

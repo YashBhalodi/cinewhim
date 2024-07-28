@@ -1,5 +1,4 @@
 import { Movie } from "@/api/model";
-import MovieCard from "@/components/MovieCard";
 import { Link } from "expo-router";
 import { useCallback } from "react";
 import {
@@ -10,7 +9,8 @@ import {
   View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { ThemedView } from "./ThemedView";
+import ThemedView from "./ThemedView";
+import MovieCard from "./MovieCard";
 
 interface MovieCardFeedProps
   extends Omit<FlatListProps<Movie>, "data" | "renderItem"> {

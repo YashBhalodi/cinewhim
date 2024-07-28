@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenreTag renders correctly 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#151718",
+      },
+      {
+        "borderRadius": 8,
+        "paddingHorizontal": 12,
+        "paddingVertical": 4,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#ECEDEE",
+        },
+        {
+          "fontSize": 16,
+          "lineHeight": 24,
+        },
+        undefined,
+      ]
+    }
+  >
+    Family
+  </Text>
+</View>
+`;
+
+exports[`ThemedIcon renders correctly 1`] = `<Text />`;
+
+exports[`ThemedText renders correctly 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#ECEDEE",
+      },
+      {
+        "fontSize": 16,
+        "lineHeight": 24,
+      },
+      undefined,
+    ]
+  }
+>
+  Snapshot test!
+</Text>
+`;

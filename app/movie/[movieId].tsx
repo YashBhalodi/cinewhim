@@ -5,15 +5,19 @@ import {
   useRecommendationFeedQuery,
 } from "@/api/hooks";
 import { Collection, Genre } from "@/api/model";
-import ErrorScreen from "@/components/ErrorScreen";
-import GenreTag from "@/components/GenreTag";
-import IconButton from "@/components/IconButton";
-import Loader from "@/components/Loader";
-import MovieCardFeed from "@/components/MovieCardFeed";
-import RatingView from "@/components/RatingView";
-import { ThemedIcon } from "@/components/ThemedIcon";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
+
+import {
+  ThemedIcon,
+  ThemedText,
+  ThemedView,
+  ErrorScreen,
+  GenreTag,
+  Loader,
+  MovieCardFeed,
+  RatingView,
+  IconButton,
+} from "@/components";
+
 import { getReleaseDateText, getRuntimeText } from "@/utils/formattingUtils";
 import { Image, ImageBackground } from "expo-image";
 import { useLocalSearchParams, useNavigation } from "expo-router";
