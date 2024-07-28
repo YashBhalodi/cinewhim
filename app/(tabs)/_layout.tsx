@@ -77,11 +77,10 @@ export default function TabLayout() {
         experimentalBlurMethod="dimezisBlurView"
         intensity={30}
       >
-        <View>
-          <ThemedText type="heading3" color="textGreen">
-            CineWhim
-          </ThemedText>
-        </View>
+        <ThemedText type="heading3" color="textGreen">
+          CineWhim
+        </ThemedText>
+
         <IconButton iconProps={{ name: "heart-o" }} />
       </BlurView>
     </View>
